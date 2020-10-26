@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#%%
+#%% [markdown]
 # # Demonstration
 # 
 # This file is used to demonstrate interacting with Jupyter notebooks
@@ -43,7 +43,7 @@ y = np.cumsum(e)
 ax = plt.plot(y)
 
 
-#%%
+#%% [markdown]
 # # Title
 # ## Chapter
 # ### Section
@@ -71,4 +71,5 @@ ax = plt.plot(y)
 # | $\beta$   | 0.90  |
 
 #%%
-
+import numpy as np
+np.array()
