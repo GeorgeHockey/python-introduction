@@ -58,22 +58,22 @@ print("This is a " + str(a_string))
 
 #%%
 
-list = [scalar_float, scalar_int]
+listt = [scalar_float, scalar_int]
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 
-print(list)
+print(listt)
 print(numbers)
 
-list.append(a_string)
-print(list)
-list.remove(a_string)
-print(list)
-list.extend(numbers)
-print(list)
-list.extend(["one more"])
-print(list)
+listt.append(a_string)
+print(listt)
+listt.remove(a_string)
+print(listt)
+listt.extend(numbers)
+print(listt)
+listt.extend(["one more"])
+print(listt)
 
-slice = list[2:12]
+slice = listt[2:12]
 print(slice)
 
 #%%
@@ -116,6 +116,12 @@ print(two)
 #%%
 
 
+second_tuple = (tuple(second_list[0]), tuple(second_list[1]))
+print(second_tuple)
+
+re_list = [list(second_tuple[0]),list(second_tuple[1])]
+print(re_list)
+
 #%%
 # ## Problem: Create a dictionary
 # 
@@ -123,6 +129,7 @@ print(two)
 #    `"int"` and 31415, and `"string"` and `"three-point-one-four-one-five"`.
 
 #%%
+a = {"float": 3.415, "int": 31415, "string": "three-point-four-one-five"}
 
 
 #%%
@@ -132,6 +139,13 @@ print(two)
 # 2. Change the value of `"float"` to `22 / 7`.
 
 #%%
+value = a["float"]
+print(value)
+
+a["float"] = 22/7
+value = a["float"]
+print(value)
+
 
 
 #%%
@@ -141,6 +155,10 @@ print(two)
 # 2. Remove the key "float" and its value.
 
 #%%
+
+a["better_float"] = 6.66
+
+del a["float"]
 
 
 #%%
@@ -158,8 +176,18 @@ print(two)
 #%%
 
 
-#%%
 
+
+#%%
+lst = []
+lst.append(9)
+lst.append("eight")
+lst.append(7.0)
+
+lst.extend(["Six", 5, 4.0 ])
+
+first_4 = lst[0:3]
+last_3 = lst[-3:]
 
 #%%
 
@@ -186,6 +214,17 @@ print(two)
 # 5. Add an entry "date" with the value 4
 
 #%%
+dct = {}
+
+dct["apple"] = 1
+dct["banana"] = 2.0
+dct["cherry"] = "iii"
+
+dct["apple"] = "I"
+
+del dct["banana"]
+
+dct["date"] = 4
 
 
 #%%
@@ -216,7 +255,10 @@ print(two)
 # ```
 
 #%%
+other_dct = dct
+string2 = f"{other_dct['apple']} , {other_dct['cherry']} , {other_dct['date']}"
 
+print(string2)
 
 #%%
 
@@ -229,6 +271,13 @@ print(two)
 # 3. Convert back toa tuple
 
 #%%
+
+ben = (100, 4)
+
+ben_list = list(ben)
+ben_list.extend([101, 5])
+
+ben_tuple = tuple(ben_list)
 
 
 #%%
