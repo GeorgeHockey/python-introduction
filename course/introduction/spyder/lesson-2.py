@@ -38,6 +38,14 @@ print(scalar_float)
 #    `String concatenation is like addition`. 
 
 #%%
+a_string = "This is a string"
+print(f"The value of scalar_float is {scalar_float}")
+
+first = "String concatenation"
+second = " is like addition"
+
+print(first + second)
+print("This is a " + str(a_string))
 
 
 #%%
@@ -50,6 +58,23 @@ print(scalar_float)
 
 #%%
 
+list = [scalar_float, scalar_int]
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+print(list)
+print(numbers)
+
+list.append(a_string)
+print(list)
+list.remove(a_string)
+print(list)
+list.extend(numbers)
+print(list)
+list.extend(["one more"])
+print(list)
+
+slice = list[2:12]
+print(slice)
 
 #%%
 # ## Problem: Create a list of lists
@@ -58,6 +83,13 @@ print(scalar_float)
 # 2. Select the element 5 from the nested list
 
 #%%
+second_list = [[1, 2, 3, ], [4, 5, 6]]
+
+second_row = second_list[1]
+fifth = second_list[1][1]
+print(second_row[1])
+print(fifth)
+
 
 
 #%%
@@ -67,7 +99,13 @@ print(scalar_float)
 # 2. Select the element "c" from the tuple
 
 #%%
-
+tpl = (1, 2.0, "c")
+two = tpl[2]
+print(two)
+two = tpl[-1]
+print(two)
+two = tpl[-2]
+print(two)
 
 #%%
 # ## Problem: Convert a list to a tuple and back
