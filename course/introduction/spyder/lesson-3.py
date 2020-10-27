@@ -30,6 +30,17 @@
 # Begin by importing the important modules.
 
 #%%
+import numpy as np
+import pandas as pd
+import scipy as sp
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+import statsmodels.tsa.api as tsa
+
+
+np.array([1, 2, 3])
+
 
 
 #%%
@@ -60,6 +71,10 @@
 # 3. Import the `stats` module from `scipy`
 
 #%%
+from numpy import array, sqrt, log, exp
+from statsmodels.regression.linear_model import OLS
+from scipy import stats
+
 
 
 #%%
@@ -84,7 +99,15 @@ x = np.array([[2,3],[1,2]])
 print(x)
 
 
+
+
 #%%
+
+Y = array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(Y)
+ Y_2 = 2 * Y
+print(Y_2)
+
 
 
 #%%
