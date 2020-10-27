@@ -20,6 +20,11 @@
 # 3. Print each value using the `print` function.   
 
 #%%
+scalar_float = 3.14
+scalar_int = 314
+print(scalar_int)
+print(scalar_float)
+
 
 
 #%%
