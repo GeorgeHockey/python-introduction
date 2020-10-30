@@ -61,6 +61,10 @@ prices = pd.read_hdf(hdf_file, "prices")
 # ```
 
 #%%
+prices_row = pd.DataFrame([sep_04, sep_05, sep_06, sep_07, sep_10, sep_11, sep_12, sep_13, sep_14, sep_17, sep_18, sep_19])
+prices_row.index = dates
+
+
 
 
 #%%
@@ -76,6 +80,7 @@ prices = pd.read_hdf(hdf_file, "prices")
 # `prices` 
 
 #%%
+prices_col = pd.DataFrame([spy, aapl, goog]).T
 
 
 #%%
@@ -88,7 +93,7 @@ prices = pd.read_hdf(hdf_file, "prices")
 # `prices` 
 
 #%%
-
+prices_dict = pd.DataFrame({"SPY":spy, "AAPL":aapl, "GOOG":goog})
 
 #%%
 # ## Exercises
