@@ -40,6 +40,9 @@ mom_10 = momentum["mom_10"]
 # In the second cell, call `describe`, a method that summarizes `Series` and `DataFrames` on `mom_01`.
 
 #%%
+print(mom_01.mean(), mom_01.std(), mom_01.skew(), mom_01.kurt(), mom_01.min(), mom_01.max())
+
+mom_01.describe()
 
 
 #%%
@@ -52,6 +55,14 @@ mom_10 = momentum["mom_10"]
 # `skew` and `kurtosis` to produce the same output.
 
 #%%
+import numpy as np
+print(np.mean(mom_01), np.std(mom_01))
+
+import scipy.stats as stats
+print(stats.skew(mom_01), stats.kurtosis(mom_01))
+
+
+
 
 
 #%%
@@ -70,6 +81,17 @@ mom_10 = momentum["mom_10"]
 
 #%%
 
+x = np.array([[1, 2], [2, 9]])
+
+output = np.linalg.slogdet(x)
+
+print(output)
+
+sign, log_det = np.linalg.slogdet(x)
+
+print(sign)
+print(log_det)
+
 
 #%%
 
@@ -86,7 +108,7 @@ mom_10 = momentum["mom_10"]
 # ```  
 
 #%%
-
+np.linspace(0, 1, 11)
 
 #%%
 # ## Problem: Calling Functions using Keyword Arguments
@@ -107,6 +129,10 @@ mom_10 = momentum["mom_10"]
 # Compute the number of distinct combinations of 5 objects from a set of 10.
 
 #%%
+from scipy.special import comb
+comb(10, 5)
+comb(10, 5, repetition = True)
+
 
 
 #%%
@@ -114,7 +140,7 @@ mom_10 = momentum["mom_10"]
 # using the `repetition=True` keyword argument.
 
 #%%
-
+comb(10, 5, exact = True)
 
 #%%
 # Compute the number of combinations using the exact representation using 
@@ -150,6 +176,7 @@ mom_10 = momentum["mom_10"]
 
 #%%
 
+help(stats.kurtosis)
 
 #%%
 
@@ -170,7 +197,7 @@ mom_10 = momentum["mom_10"]
 # Use the `info` method on `momentum` to get information about this `DataFrame`.
 
 #%%
-
+momentum.info()
 
 #%%
 # ### Exercise: Compute the day-by-day mean
@@ -181,8 +208,13 @@ mom_10 = momentum["mom_10"]
 
 #%%
 
-
+print(momentum.tail(6))
 #%%
+
+trans_mom = momentum.T
+trans_mom.mean(axis = 1)
+trans_mom.sum(axis = 1)
+
 
 
 #%%
@@ -192,7 +224,8 @@ mom_10 = momentum["mom_10"]
 
 #%%
 
-
+mean_returns = momentum.mean()
+mrt_std = mean_returns.std()
 #%%
 # ### Exercise: Compute the average standard deviation
 # 
@@ -203,4 +236,21 @@ mom_10 = momentum["mom_10"]
 # where $V[r_i]$ is the variance of portfolio $i$.
 
 #%%
+mom_var = momentum.var(axis = 0)
+N = mom_01.count()
+#%%
+import math
+average_std = math.sqrt((1/N)*sum(mom_var))
+print(average_std)
+#%%
+
+def a (dataframe):
+    return math.sqrt((1/(len(dataframe.index)))*sum((dataframe.var())))
+
+
+a (momentum)
+
+
+
+
 
